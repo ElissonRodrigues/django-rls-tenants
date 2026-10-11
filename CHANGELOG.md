@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.2] - 2026-10-11
+
 ### Fixed
 
 - **`override_settings(RLS_TENANTS=...)` was silently ignored** (#100).
@@ -535,7 +537,8 @@ Initial stable release of django-rls-tenants.
   and manager `_fetch_all` could clear GUCs with session scope while setting
   them with transaction scope, causing mismatched lifetimes.
 
-[Unreleased]: https://github.com/dvoraj75/django-rls-tenants/compare/v1.3.1...HEAD
+[Unreleased]: https://github.com/dvoraj75/django-rls-tenants/compare/v1.3.2...HEAD
+[1.3.2]: https://github.com/dvoraj75/django-rls-tenants/compare/v1.3.1...v1.3.2
 [1.3.1]: https://github.com/dvoraj75/django-rls-tenants/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/dvoraj75/django-rls-tenants/compare/v1.2.2...v1.3.0
 [1.2.2]: https://github.com/dvoraj75/django-rls-tenants/compare/v1.2.1...v1.2.2

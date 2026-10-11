@@ -123,6 +123,25 @@ migration that assigns the correct tenant to each existing record.
 
 ## Upgrading django-rls-tenants
 
+### From 1.3.0 to 1.3.1
+
+A **drop-in upgrade** -- no code or data migration is required. The release fixes the
+example app, tightens one system check and retires a redundant one:
+
+- **System check `W003` is retired.** It only looked at `DATABASES['default']` and
+  duplicated `W007`, which checks `USE_LOCAL_SET` against `ATOMIC_REQUESTS` on every
+  configured alias. Nothing to do unless you reference `W003` in a custom check;
+  leaving it in `SILENCED_SYSTEM_CHECKS` is harmless.
+- **`W005` now also flags `BYPASSRLS` roles.** A database role with the `BYPASSRLS`
+  attribute skips every RLS policy exactly like a superuser, so `python manage.py check`
+  may report a new warning for a role that previously passed. Fix it with
+  `ALTER ROLE ... NOSUPERUSER NOBYPASSRLS` (the hint prints the exact statement).
+- **`clear_bypass_flag(is_local=True)`** is new and mirrors `set_bypass_flag()`. The
+  argument is keyword-only and defaults to `False`, so existing calls are unchanged.
+- **Security guide threat model** is scoped more precisely: arbitrary SQL running on the
+  application connection can call `set_config()` and is now listed under "Not Protected
+  Against". See [Security](security.md) if you rely on that page for your own review.
+
 ### From 1.2.2 to 1.3.0
 
 A **drop-in upgrade** -- no code changes are required and runtime behaviour is

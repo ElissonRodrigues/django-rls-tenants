@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.1] - 2026-10-11
+
 ### Added
 
 - `clear_bypass_flag()` now accepts `is_local=True`, mirroring `set_bypass_flag()`, so a
@@ -31,7 +33,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   they always use the ruff version pinned in `uv.lock` -- the same one CI
   runs (#77). Previously the hook was pinned independently (`v0.15.5` vs
   `0.15.20` in the lockfile) and local autofix/format could disagree with CI.
-
 - System check `W005` now also flags a database role with the `BYPASSRLS` attribute,
   which bypasses every RLS policy exactly like a superuser. It reads `rolsuper` and
   `rolbypassrls` from `pg_roles` (previously only `pg_user.usesuper`), names the role and
@@ -456,7 +457,8 @@ Initial stable release of django-rls-tenants.
   and manager `_fetch_all` could clear GUCs with session scope while setting
   them with transaction scope, causing mismatched lifetimes.
 
-[Unreleased]: https://github.com/dvoraj75/django-rls-tenants/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/dvoraj75/django-rls-tenants/compare/v1.3.1...HEAD
+[1.3.1]: https://github.com/dvoraj75/django-rls-tenants/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/dvoraj75/django-rls-tenants/compare/v1.2.2...v1.3.0
 [1.2.2]: https://github.com/dvoraj75/django-rls-tenants/compare/v1.2.1...v1.2.2
 [1.2.1]: https://github.com/dvoraj75/django-rls-tenants/compare/v1.2.0...v1.2.1

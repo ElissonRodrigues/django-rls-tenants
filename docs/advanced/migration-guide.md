@@ -123,6 +123,16 @@ migration that assigns the correct tenant to each existing record.
 
 ## Upgrading django-rls-tenants
 
+### From 1.3.2 to 1.3.3
+
+A **drop-in upgrade** -- the library code is unchanged. The release adds the
+[Performance & Indexing](../guides/performance.md) guide and the
+[Troubleshooting](../troubleshooting.md) page, corrects the Quick Start and User
+Integration guides (a plain `AbstractUser` instead of an RLS-protected `User`; see
+[Protecting the User Model](../guides/protecting-models.md#protecting-the-user-model) if
+you copied the old snippet), expands the example project, backfills tests and tightens CI.
+Nothing to do on upgrade.
+
 ### From 1.3.1 to 1.3.2
 
 A **drop-in upgrade** -- no code or data migration is required.

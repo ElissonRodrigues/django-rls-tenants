@@ -1,6 +1,6 @@
 # Roadmap
 
-> Last updated: 2026-10-11
+> Last updated: 2026-10-12
 >
 > Priorities may shift based on community feedback.
 > Have a suggestion? [Open an issue](https://github.com/dvoraj75/django-rls-tenants/issues).
@@ -139,10 +139,11 @@ item are in the [changelog](changelog.md).
   See [1.3.2](changelog.md#132-2026-10-11).
   *Why:* Each one let a test or a request pass for the wrong reason.
 
-- [~] **1.3.3 — Demos, docs accuracy, test backfill, CI gates** — committed example
+- [x] **1.3.3 — Demos, docs accuracy, test backfill, CI gates** — committed example
   migrations and a Celery demo (#80, #81), docs accuracy fixes and this roadmap in the
   site nav (#82), a performance guide (#83), a troubleshooting page (#109), v1.3.0 test
   backfill (#84) and a PostgreSQL matrix with release gates in CI (#110).
+  See [1.3.3](changelog.md#133-2026-10-12).
   *Why:* Closes the gap between what is documented and what is verified.
 
 ---

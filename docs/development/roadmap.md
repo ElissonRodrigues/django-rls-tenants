@@ -146,6 +146,13 @@ item are in the [changelog](changelog.md).
   See [1.3.3](changelog.md#133-2026-10-12).
   *Why:* Closes the gap between what is documented and what is verified.
 
+- [x] **1.3.4 — ASGI middleware fix** — `RLSTenantMiddleware` no longer fails every
+  authenticated ASGI request with `Token was created in a different Context`, never
+  skips the GUC clear, and cleans up cancelled requests (#58).
+  See [1.3.4](changelog.md#134-2026-10-12).
+  *Why:* The sync middleware must work on async deployments until the native async
+  path lands in v1.4.0.
+
 ---
 
 ## v1.4.0 — Async Support

@@ -123,6 +123,16 @@ migration that assigns the correct tenant to each existing record.
 
 ## Upgrading django-rls-tenants
 
+### From 1.3.3 to 1.3.4
+
+A **drop-in upgrade** -- no code, data or settings change is required. Under ASGI,
+`RLSTenantMiddleware` no longer fails authenticated requests with
+`ValueError: ... Token was created in a different Context`, and it also cleans up when an
+async view is cancelled. If you took the middleware out of `MIDDLEWARE` or moved views
+to explicit `tenant_context()` calls to work around that error, you can put it back; see
+[Running under ASGI](../guides/middleware.md#running-under-asgi).
+`USE_LOCAL_SET=True` is still WSGI-only.
+
 ### From 1.3.2 to 1.3.3
 
 A **drop-in upgrade** -- the library code is unchanged. The release adds the
